@@ -1,0 +1,13 @@
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://reshmika:Assignment1234@cluster0.stznbbv.mongodb.net/assets?retryWrites=true&w=majority
+  application:
+    name: ASSET-SERVICE
+server:
+  port: 8081
+
+
+
+
