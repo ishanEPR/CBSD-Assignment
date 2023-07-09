@@ -42,7 +42,7 @@ public class AssetService {
     }
 
     //call to microservice (user service)
-   // @HystrixCommand(fallbackMethod ="handleUserServiceDown")
+    @HystrixCommand(fallbackMethod ="handleUserServiceDown")
     public RequiredResponse displayResponseData(Integer id) {
         log.info("displayResponseData method in AssetService (call the micro service user service");
         RequiredResponse requiredResponse=new RequiredResponse();
@@ -63,16 +63,16 @@ public class AssetService {
 
     }
 
-//    public RequiredResponse handleUserServiceDown(Integer id) {
-//
-//        RequiredResponse requiredResponse=new RequiredResponse();
-//
-//        //get the asset data
-//        Asset response=assetRepository.findById(id).get();
-//        requiredResponse.setAsset(response);
-//
-//        return requiredResponse;
-//    }
+    public RequiredResponse handleUserServiceDown(Integer id) {
+
+        RequiredResponse requiredResponse=new RequiredResponse();
+
+        //get the asset data
+        Asset response=assetRepository.findById(id).get();
+        requiredResponse.setAsset(response);
+
+        return requiredResponse;
+    }
 
 
 
